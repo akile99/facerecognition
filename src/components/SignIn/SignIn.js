@@ -8,15 +8,17 @@ class SignIn extends React.Component {
 			signInPassword: ''
 		}
 	}
+
 	onEmailChange = (event) => {
 		this.setState({signInEmail: event.target.value})
 	}
+	
 	onPasswordChange = (event) => {
 		this.setState({signInPassword: event.target.value})
 	}
 
 	onSubmitSignIn = () => {
-		fetch('http://localhost:3000/signin', {
+		fetch(this.props.host+'/signin', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
@@ -25,10 +27,11 @@ class SignIn extends React.Component {
 			})
 		})
 			.then(response => response.json())
-			.then(data => {
-				if (data === 'success') {
+			.then(user => {
+				if (user.id) {
+					this.props.loadUser(user)
 					this.props.onRouteChange('home');
-				}
+				} 
 			})
 	}
 

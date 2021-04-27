@@ -1,11 +1,15 @@
 import React from 'react';
-import './ImageLinkForm.css'
+import './ImageLinkForm.css';
+import ReactTooltip from 'react-tooltip';
+import { FaRegQuestionCircle } from "react-icons/fa";
 
 const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
 	return (
 		<div>
 			<p className='f3'>
-			{'This magic brain will detect faces in your pictures, give it a try'}
+			{'This magic brain will detect faces in your pictures, give it a try  '}
+			<a data-tip= 'Past a jpg url ie. https://st.depositphotos.com/1008939/1880/i/600/depositphotos_18807295-stock-photo-portrait-of-handsome-man.jpg'><FaRegQuestionCircle /></a>
+			<ReactTooltip className='extraClass' delayHide={1000} effect='solid'/>
 			</p>
 			<div className='center'>
 				<div className='form center pa4 br3 shadow-5'>
