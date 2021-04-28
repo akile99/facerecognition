@@ -10,7 +10,7 @@ import Rank from './components/Rank/Rank';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import './App.css';
 
-const hostName = 'http://localhost:3000'
+const hostName = 'https://immense-forest-91891.herokuapp.com'
 
 const particlesOptions = {
   particles: {
