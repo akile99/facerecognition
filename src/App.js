@@ -22,10 +22,6 @@ const particlesOptions = {
   }
 }
 
-// const app = new Clarifai.App({
-//   apiKey: 'd31fc1306d514337ab0310e838efb9b2'
-// });
-
 const initialState = 
   {
     input: '',
